@@ -1,0 +1,26 @@
+
+<app-search-bar (searchEvent)="searchCharacters($event)"></app-search-bar>
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+  <app-character-card *ngFor="let char of characters" [character]="char"></app-character-card>
+</div>
+
+
+<div class="flex justify-between items-center mt-8">
+  <button
+    (click)="prevPage()"
+    class="px-6 py-2 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 disabled:bg-gray-400 transition-colors duration-300"
+    [disabled]="currentPage === 1"
+  >
+    Anterior
+  </button>
+  <span class="text-lg font-medium text-gray-700">Página {{ currentPage }}</span>
+  <button
+    (click)="nextPage()"
+    class="px-6 py-2 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 disabled:bg-gray-400 transition-colors duration-300"
+    [disabled]="!characters.length"
+  >
+    Siguiente
+  </button>
+</div>
+

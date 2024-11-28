@@ -1,0 +1,14 @@
+<div class="flex justify-center mb-8">
+  <input
+    type="text"
+    placeholder="Buscar personajes..."
+    [(ngModel)]="searchTerm"
+    class="input py-2 px-4 w-80 rounded-lg border-2 border-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all duration-300"
+  >
+  <button
+    (click)="search()"
+    class="ml-4 px-6 py-2 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 transition-colors duration-300"
+  >
+    Buscar
+  </button>
+</div>
